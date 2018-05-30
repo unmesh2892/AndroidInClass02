@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InClass2</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="button_euro">Euro (EUR)</string>
+    <string name="button_canadian">Canadian(CAD)</string>
+    <string name="clear_all">Clear All</string>
+    <string name="input_text" > </string>
+
+</resources>

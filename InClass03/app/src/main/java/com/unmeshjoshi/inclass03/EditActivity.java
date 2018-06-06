@@ -87,6 +87,7 @@ public class EditActivity extends AppCompatActivity {
                 }else if(cas == 3){
 
                     RadioButton radioButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+                    int id = radioGroup.getCheckedRadioButtonId();
                     // RadioButton radioButton = findViewById(getIntent().getExtras().getInt(DisplayActivity.STUDENTDEPT));
                     String value = radioButton.getText().toString();
                     Log.d("Editactivity",value);
@@ -94,6 +95,7 @@ public class EditActivity extends AppCompatActivity {
                         setResult(RESULT_CANCELED);
                     }else{
                         Intent intent = new Intent();
+                        intent.putExtra(DisplayActivity.ID_KEY,id);
                         intent.putExtra(DisplayActivity.VALUE_KEY,value);
                         setResult(RESULT_OK,intent);
                     }

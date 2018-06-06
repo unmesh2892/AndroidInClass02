@@ -22,7 +22,7 @@ public class DisplayActivity extends AppCompatActivity {
     public static String STUDENTDEPT = "STUDENTDEPT";
     public static String STUDENTMOOD = "STUDENTMOOD";
     static String VALUE_KEY = "value";
-   // static int VALUE_SEEK = 0;
+    static String ID_KEY = "id";
 
      Student student;
     TextView textViewName,textViewEmail,textViewDepartment,textViewSeekBar;
@@ -121,6 +121,7 @@ public class DisplayActivity extends AppCompatActivity {
                 String dept = data.getExtras().getString(VALUE_KEY);
                 Log.d("Department",dept);
                 textViewDepartment.setText(data.getExtras().getString(VALUE_KEY));
+                student.deptId = data.getExtras().getInt(ID_KEY);
                 student.department = data.getExtras().getString(VALUE_KEY);
             }else if(resultCode == RESULT_CANCELED){
                 Log.d("InClass03","Not correct value");

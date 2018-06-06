@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">InClass03</string>
+    <string name="radioSIS">SIS</string>
+    <string name="radioCS">CS</string>
+    <string name="radioBIO">BIO</string>
+    <string name="radioOther">Others</string>
+</resources>

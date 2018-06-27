@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InClass06</string>
+    <string name="buttonGo">Go</string>
+    <string name="textViewTitle" />
+    <string name="textViewPublishedAt" />
+    <string name="textViewDescription" />
+    <string name="textViewOutOf">Out of</string>
+    <string name="textViewNumber" />
+    <string name="textViewTotal" />
+</resources>

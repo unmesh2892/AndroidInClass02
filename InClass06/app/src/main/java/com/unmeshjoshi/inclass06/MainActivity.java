@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity implements GetAsyncTask.Hand
         outOf = findViewById(R.id.textViewOutOf);
         number = findViewById(R.id.textViewNumber);
         total = findViewById(R.id.textViewTotal);
-
+        prev.setVisibility(View.INVISIBLE);
+        next.setVisibility(View.INVISIBLE);
 
         findViewById(R.id.buttonGo).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +93,8 @@ public class MainActivity extends AppCompatActivity implements GetAsyncTask.Hand
             @Override
             public void onClick(View v) {
 
-                if(count<=mainArticleList.size()-1  ){
+                if(count<=mainArticleList.size()-2){
+
                     newsTitle.setText(mainArticleList.get(count).getTitle());
                     outOf.setVisibility(View.VISIBLE);
                     outOf.setEnabled(true);
@@ -103,7 +105,22 @@ public class MainActivity extends AppCompatActivity implements GetAsyncTask.Hand
                     number.setText(""+(String.valueOf(count+1)));
                     total.setText(String.valueOf(mainArticleList.size()));
                     count++;
-                }else{
+
+                }else if(count == mainArticleList.size()-1){
+
+                    newsTitle.setText(mainArticleList.get(count).getTitle());
+                    outOf.setVisibility(View.VISIBLE);
+                    outOf.setEnabled(true);
+                    publishedAt.setText(mainArticleList.get(count).getPublishedAt());
+                    Picasso.with(MainActivity.this).load(mainArticleList.get(count).getUrlToImage()).into(images);
+                    images.setVisibility(View.VISIBLE);
+                    description.setText(mainArticleList.get(count).getDescription());
+                    number.setText(""+(String.valueOf(count+1)));
+                    total.setText(String.valueOf(mainArticleList.size()));
+                    count++;
+
+                }
+                else{
                     count=0;
                     newsTitle.setText(mainArticleList.get(count).getTitle());
                     outOf.setVisibility(View.VISIBLE);
@@ -123,7 +140,8 @@ public class MainActivity extends AppCompatActivity implements GetAsyncTask.Hand
         prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(count >=0){
+                if(count >1){
+                    count--;
                     newsTitle.setText(mainArticleList.get(count).getTitle());
                     outOf.setVisibility(View.VISIBLE);
                     outOf.setEnabled(true);
@@ -133,8 +151,21 @@ public class MainActivity extends AppCompatActivity implements GetAsyncTask.Hand
                     description.setText(mainArticleList.get(count).getDescription());
                     number.setText(""+(String.valueOf(count+1)));
                     total.setText(String.valueOf(mainArticleList.size()));
-                    count--;
-                }else{
+
+                }else if(count == 1){
+                    newsTitle.setText(mainArticleList.get(count).getTitle());
+                    outOf.setVisibility(View.VISIBLE);
+                    outOf.setEnabled(true);
+                    publishedAt.setText(mainArticleList.get(count).getPublishedAt());
+                    Picasso.with(MainActivity.this).load(mainArticleList.get(count).getUrlToImage()).into(images);
+                    images.setVisibility(View.VISIBLE);
+                    description.setText(mainArticleList.get(count).getDescription());
+                    number.setText(""+(String.valueOf(count)));
+                    total.setText(String.valueOf(mainArticleList.size()));
+                    count = -1;
+                }
+
+                else{
                     count = mainArticleList.size()-1;
                     outOf.setVisibility(View.VISIBLE);
                     newsTitle.setText(mainArticleList.get(count).getTitle());
@@ -145,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements GetAsyncTask.Hand
                     description.setText(mainArticleList.get(count).getDescription());
                     number.setText(""+(String.valueOf(count+1)));
                     total.setText(String.valueOf(mainArticleList.size()));
-                    count--;
+                    //count--;
                 }
             }
         });
@@ -186,9 +217,8 @@ public class MainActivity extends AppCompatActivity implements GetAsyncTask.Hand
             next.setEnabled(false);
             prev.setEnabled(false);
         }else{
-            next.setEnabled(true);
-
-            prev.setEnabled(true);
+            next.setVisibility(View.VISIBLE);
+            prev.setVisibility(View.VISIBLE);
         }
         if(articleResult.size() != 0){
             mainArticleList = articleResult;

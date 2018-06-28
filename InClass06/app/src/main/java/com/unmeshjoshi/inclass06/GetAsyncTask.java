@@ -61,8 +61,10 @@ public class GetAsyncTask extends AsyncTask<String, Void, ArrayList<Article>> {
                     Article article = new Article();
                     article.author = articleJson.getString("author");
                     article.title = articleJson.getString("title");
-                    if(articleJson.getString("description").length() == 0){
+                    Log.d("description",""+articleJson.getString("description"));
+                    if(articleJson.getString("description").isEmpty() || articleJson.getString("description").equals(null)){
                         article.description = " ";
+                        Log.d("inside0",""+article.description);
                     }else{
                         article.description = articleJson.getString("description");
                     }

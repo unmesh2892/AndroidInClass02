@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MidTerm</string>
+    <string name="buttonGo">Go</string>
+    <string name="textViewAppName" />
+    <string name="buttonGo1">Filter</string>
+    <string name="textViewSet" />
+    <string name="textViewName" />
+    <string name="textViewDate" />
+    <string name="textViewGenres" />
+    <string name="textViewArtist" />
+    <string name="textViewCopy" />
+</resources>

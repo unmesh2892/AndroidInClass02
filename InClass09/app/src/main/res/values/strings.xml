@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">InClass09</string>
+    <string name="buttonLogin">Login</string>
+    <string name="textViewSignUp">SignUp</string>
+    <string name="editTextLstName" />
+    <string name="editTextUserName" />
+    <string name="buttonSignUp">Sign Up</string>
+    <string name="buttonCancel" />
+    <string name="ContactName" />
+    <string name="ContactPhone" />
+    <string name="ContactEmail" />
+    <string name="logout"/>
+</resources>
